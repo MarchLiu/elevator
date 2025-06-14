@@ -1,1 +1,0 @@
-/opt/homebrew/bin/x86_64-linux-musl-g++ -static-libgcc -static-libstdc++ -static CMakeFiles/normal.dir/main.cpp.o -o normal
