@@ -1,0 +1,24 @@
+# Linux 交叉编译工具链配置
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
+
+# 使用 musl 工具链（根据你的安装路径调整）
+set(TOOLCHAIN_PREFIX "/opt/homebrew/opt/musl-cross")
+
+# 设置编译器
+set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
+
+# 设置其他工具
+set(CMAKE_AR ${TOOLCHAIN_PREFIX}-ar)
+set(CMAKE_RANLIB ${TOOLCHAIN_PREFIX}-ranlib)
+set(CMAKE_STRIP ${TOOLCHAIN_PREFIX}-strip)
+
+# 设置查找路径
+set(CMAKE_FIND_ROOT_PATH /opt/homebrew/opt/musl-cross)
+
+# 调整查找策略
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)

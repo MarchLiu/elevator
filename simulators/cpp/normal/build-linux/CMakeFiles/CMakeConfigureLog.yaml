@@ -1,0 +1,507 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Linux -  - x86_64
+      The host system is: Darwin - 24.5.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/homebrew/bin/x86_64-linux-musl-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/4.0.2/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/homebrew/bin/x86_64-linux-musl-g++ 
+      Build flags: -static-libgcc;-static-libstdc++
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/4.0.2/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-7SKGFx"
+      binary: "/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-7SKGFx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-static"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-7SKGFx'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f6aac/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f6aac.dir/build.make CMakeFiles/cmTC_f6aac.dir/build
+        Building C object CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o
+        /opt/homebrew/bin/x86_64-linux-musl-gcc   -v -o CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-gcc
+        Target: x86_64-linux-musl
+        Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0
+        Thread model: posix
+        gcc version 9.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/cc1 -quiet -v -iprefix /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/ -isysroot /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o -version -o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccxw92RX.s
+        GNU C17 (GCC) version 9.2.0 (x86_64-linux-musl)
+        	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1), GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/local/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include"
+        ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include
+        End of search list.
+        GNU C17 (GCC) version 9.2.0 (x86_64-linux-musl)
+        	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1), GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 90a390b41f6bb578aec958bd2003a825
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/as -v --64 -o CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccxw92RX.s
+        GNU assembler version 2.33.1 (x86_64-linux-musl) using BFD version (GNU Binutils) 2.33.1
+        COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        Linking C executable cmTC_f6aac
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6aac.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-gcc
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper
+        Target: x86_64-linux-musl
+        Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0
+        Thread model: posix
+        gcc version 9.2.0 (GCC) 
+        COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/
+        COLLECT_GCC_OPTIONS='-static' '-v' '-o' 'cmTC_f6aac' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2 -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccXhYqel.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_f6aac /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o
+        collect2 version 9.2.0
+        /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccXhYqel.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_f6aac /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o
+        GNU ld (GNU Binutils) 2.33.1
+        COLLECT_GCC_OPTIONS='-static' '-v' '-o' 'cmTC_f6aac' '-mtune=generic' '-march=x86-64'
+        /opt/homebrew/bin/x86_64-linux-musl-gcc -static -v -Wl,-v CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o -o cmTC_f6aac
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include]
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include]
+        end of search list found
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include]
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/include]
+        implicit include dirs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-7SKGFx']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f6aac/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f6aac.dir/build.make CMakeFiles/cmTC_f6aac.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/homebrew/bin/x86_64-linux-musl-gcc   -v -o CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-gcc]
+        ignore line: [Target: x86_64-linux-musl]
+        ignore line: [Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/cc1 -quiet -v -iprefix /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/ -isysroot /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o -version -o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccxw92RX.s]
+        ignore line: [GNU C17 (GCC) version 9.2.0 (x86_64-linux-musl)]
+        ignore line: [	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1)  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include"]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 9.2.0 (x86_64-linux-musl)]
+        ignore line: [	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1)  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 90a390b41f6bb578aec958bd2003a825]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/as -v --64 -o CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccxw92RX.s]
+        ignore line: [GNU assembler version 2.33.1 (x86_64-linux-musl) using BFD version (GNU Binutils) 2.33.1]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking C executable cmTC_f6aac]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6aac.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-linux-musl]
+        ignore line: [Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-static' '-v' '-o' 'cmTC_f6aac' '-mtune=generic' '-march=x86-64']
+        link line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2 -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccXhYqel.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_f6aac /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccXhYqel.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [--sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-static] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_f6aac] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [--start-group] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lc] ==> lib [c]
+          arg [--end-group] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+        ignore line: [collect2 version 9.2.0]
+        ignore line: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccXhYqel.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_f6aac /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_f6aac.dir/CMakeCCompilerABI.c.o --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+        linker tool for 'C': /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld
+        remove lib [gcc_eh]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crt1.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crti.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtend.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crtn.o]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        implicit libs: [gcc;c]
+        implicit objs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crt1.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crti.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtend.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crtn.o]
+        implicit dirs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.33.1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-2eBpNF"
+      binary: "/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-2eBpNF"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-static-libgcc -static-libstdc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-static"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-2eBpNF'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0691d/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0691d.dir/build.make CMakeFiles/cmTC_0691d.dir/build
+        Building CXX object CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/homebrew/bin/x86_64-linux-musl-g++   -static-libgcc -static-libstdc++    -v -o CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-g++
+        Target: x86_64-linux-musl
+        Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0
+        Thread model: posix
+        gcc version 9.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/cc1plus -quiet -v -iprefix /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/ -isysroot /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -D_GNU_SOURCE /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccmNXblM.s
+        GNU C++14 (GCC) version 9.2.0 (x86_64-linux-musl)
+        	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1), GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward"
+        ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/local/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include"
+        ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include
+        End of search list.
+        GNU C++14 (GCC) version 9.2.0 (x86_64-linux-musl)
+        	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1), GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 70a065cc278aeb74891f40a71b9d6939
+        COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/as -v --64 -o CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccmNXblM.s
+        GNU assembler version 2.33.1 (x86_64-linux-musl) using BFD version (GNU Binutils) 2.33.1
+        COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/
+        COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_0691d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0691d.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-g++
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper
+        Target: x86_64-linux-musl
+        Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0
+        Thread model: posix
+        gcc version 9.2.0 (GCC) 
+        COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/
+        COLLECT_GCC_OPTIONS='-static-libgcc' '-static' '-v' '-o' 'cmTC_0691d' '-mtune=generic' '-march=x86-64'
+         /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2 -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccqkJlsd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_0691d /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o
+        collect2 version 9.2.0
+        /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccqkJlsd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_0691d /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o
+        GNU ld (GNU Binutils) 2.33.1
+        COLLECT_GCC_OPTIONS='-static-libgcc' '-static' '-v' '-o' 'cmTC_0691d' '-mtune=generic' '-march=x86-64'
+        /opt/homebrew/bin/x86_64-linux-musl-g++ -static-libgcc -static-libstdc++  -static -v -Wl,-v CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0691d
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0]
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl]
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward]
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include]
+          add: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include]
+        end of search list found
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0]
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl]
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0/backward]
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include]
+        collapse include dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/include]
+        implicit include dirs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include/c++/9.2.0/backward;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/include;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/Users/mars/jobs/elevator/simulators/cpp/normal/build-linux/CMakeFiles/CMakeScratch/TryCompile-2eBpNF']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0691d/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0691d.dir/build.make CMakeFiles/cmTC_0691d.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/homebrew/bin/x86_64-linux-musl-g++   -static-libgcc -static-libstdc++    -v -o CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-g++]
+        ignore line: [Target: x86_64-linux-musl]
+        ignore line: [Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/cc1plus -quiet -v -iprefix /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/ -isysroot /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -D_GNU_SOURCE /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -version -o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccmNXblM.s]
+        ignore line: [GNU C++14 (GCC) version 9.2.0 (x86_64-linux-musl)]
+        ignore line: [	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1)  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward"]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include"]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/usr/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/../../lib/gcc/x86_64-linux-musl/9.2.0/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/x86_64-linux-musl]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include/c++/9.2.0/backward]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/include]
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 9.2.0 (x86_64-linux-musl)]
+        ignore line: [	compiled by GNU C version Apple LLVM 14.0.3 (clang-1403.0.22.14.1)  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 70a065cc278aeb74891f40a71b9d6939]
+        ignore line: [COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/as -v --64 -o CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o /var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccmNXblM.s]
+        ignore line: [GNU assembler version 2.33.1 (x86_64-linux-musl) using BFD version (GNU Binutils) 2.33.1]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-static-libgcc' '-v' '-o' 'CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_0691d]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0691d.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-linux-musl-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-linux-musl]
+        ignore line: [Configured with: ../src_gcc/configure --enable-languages=c,c++ --disable-nls --with-debug-prefix-map=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9= --disable-libquadmath --disable-decimal-float --disable-libitm --disable-fixed-point CXX='clang++ -fbracket-depth=512' --disable-bootstrap --disable-assembly --disable-werror --target=x86_64-linux-musl --prefix= --libdir=/lib --disable-multilib --with-sysroot=/x86_64-linux-musl --enable-tls --disable-libmudflap --disable-libsanitizer --disable-gnu-indirect-function --disable-libmpx --enable-libstdcxx-time=rt --with-build-sysroot=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_sysroot AR_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ar AS_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/gas/as-new LD_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/ld/ld-new NM_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/nm-new OBJCOPY_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objcopy OBJDUMP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/objdump RANLIB_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/ranlib READELF_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/readelf STRIP_FOR_TARGET=/private/tmp/musl-cross-20231210-53458-ehqxxo/musl-cross-make-0.9.9/build/local/x86_64-linux-musl/obj_binutils/binutils/strip-new --build=aarch64-apple-darwin22.6.0 --host=aarch64-apple-darwin22.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/:/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-static-libgcc' '-static' '-v' '-o' 'cmTC_0691d' '-mtune=generic' '-march=x86-64']
+        link line: [ /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2 -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccqkJlsd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_0691d /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccqkJlsd.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [--sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-static] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_0691d] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib]
+          arg [-L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib] ==> dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [--start-group] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lc] ==> lib [c]
+          arg [--end-group] ==> ignore
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o]
+          arg [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o] ==> obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+        ignore line: [collect2 version 9.2.0]
+        ignore line: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld -plugin /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../libexec/gcc/x86_64-linux-musl/9.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/tm/s1d21dpj3_3bx9blf642czlh0000gn/T//ccqkJlsd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lc --sysroot=/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl -m elf_x86_64 -static -o cmTC_0691d /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0 -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib -L/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib -v CMakeFiles/cmTC_0691d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --start-group -lgcc -lgcc_eh -lc --end-group /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o]
+        linker tool for 'CXX': /opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld
+        remove lib [gcc_eh]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crt1.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crt1.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crti.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crti.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/crtend.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtend.o]
+        collapse obj [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib/crtn.o] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crtn.o]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/lib] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        collapse library dir [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../x86_64-linux-musl/lib] ==> [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        implicit libs: [stdc++;m;gcc;c]
+        implicit objs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crt1.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crti.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtbeginT.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0/crtend.o;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib/crtn.o]
+        implicit dirs: [/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc/x86_64-linux-musl/9.2.0;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/lib/gcc;/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/x86_64-linux-musl/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/opt/homebrew/Cellar/musl-cross/0.9.9_2/libexec/bin/../lib/gcc/x86_64-linux-musl/9.2.0/../../../../x86_64-linux-musl/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.33.1
+...
