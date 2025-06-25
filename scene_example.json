@@ -1,0 +1,34 @@
+{
+  "scene_id": 100,
+  "level": 30,
+  "maximum": 12,
+  "elevator_count": 3,
+  "elevators": [
+    {
+      "id": 1,
+      "scene_id": 100,
+      "maximum": 10,
+      "running": true,
+      "level": 5,
+      "direction": "up",
+      "want_level": 8
+    },
+    {
+      "id": 2,
+      "scene_id": 100,
+      "maximum": 10,
+      "running": false,
+      "level": 0,
+      "direction": null,
+      "want_level": null
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "scene_id": 100,
+      "level": 3,
+      "want": 7
+    }
+  ]
+}
