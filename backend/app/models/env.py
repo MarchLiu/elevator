@@ -5,6 +5,9 @@ from app.models.messages import *
 import heapq
 from typing import Optional, Literal
 import asyncio
+from dataclasses import field
+from sqlmodel import SQLModel, Field
+from sqlalchemy import Column, JSON
 
 @dataclass
 class Elevator:
@@ -15,7 +18,7 @@ class Elevator:
     closed: bool
     level: float
     direction: Optional[Literal["up", "down"]]
-    want: dict[int, int] = {}
+    want: dict[int, int] = field(default_factory=dict)
 
 @dataclass
 class Passenger:
@@ -42,7 +45,7 @@ class BaseEnv:
                     scene_id=scene_id, 
                     maximum=maximum, 
                     running=False, 
-                    level=level, 
+                    level=0, 
                     direction=None, 
                     want={}, 
                     current={}, 
@@ -156,7 +159,7 @@ class BaseEnv:
         
     async def run_tick(self, step=None):
         s = step or self.step
-        self.agent.post_env(self)
+        await self.agent.post_env(self)
         async for message in self.agent.read():
             await self.post_message(message)
 
@@ -176,10 +179,10 @@ class BaseEnv:
             elif not (elevator.running or elevator.closed):
                 passengers_count = 0
                 if elevator.level == floor(elevator.level):
-                    passengers_count += self.check_out(elevator)
-                    passengers_count += self.check_in(elevator, passengers_count)
-                waiting = 3000+passengers_count*2000 # 等待时间
-                self.post_message(CloseAction(
+                    self.check_out(elevator)
+                    passengers_count += self.check_in(elevator)
+                waiting = 3000+(passengers_count-1)*2000 # 等待时间
+                await self.post_message(CloseAction(
                     id=elevator.id,
                     scene_id=elevator.scene_id,
                     tick=self.tick+waiting,
@@ -193,7 +196,8 @@ class BaseEnv:
         if elevator.level == floor(elevator.level):
             if not elevator.closed:
                 passengers = elevator.want.get(elevator.level, 0)
-                del elevator.want[elevator.level]
+                if passengers > 0:
+                    del elevator.want[elevator.level]
                 return passengers
         return 0
         
@@ -221,20 +225,39 @@ class MemEnv(BaseEnv):
     def __init__(self, scene_id: int, agent: BaseAgent, level: int=25, maximum: int=10, elevator_count: int=4):
         super().__init__(scene_id, agent, level, maximum, elevator_count)
         self.messages = []
+        self.serial = 0
         
     async def post_message(self, *messages: BaseModel):
         for message in messages:
-            heapq.heappush(self.messages, (message.tick, message))
+            heapq.heappush(self.messages, 
+                        (
+                            message.tick, 
+                            self.serial, 
+                            message.model_copy(
+                                update={"id": self.serial}
+                            )
+                        ))
+            self.serial += 1
         
     async def pop_message(self):
         if len(self.messages) == 0:
             return None
-        tick, message = self.messages[0]
+        tick, serial, message = self.messages[0]
         if tick > self.tick:
             return None
         heapq.heappop(self.messages)
 
         return message
+    
+class DBMessage(SQLModel, table=True):
+    id: int = Field(default=None, primary_key=True)
+    scene_id: int
+    tick: int
+    meta: dict = Field(sa_column=Column(JSON))
+    content: dict = Field(sa_column=Column(JSON))
+    
+    def to_message(self) -> BaseMessage:
+        return DBMessage.model_validate(self).to_message()
     
 class DBEnv(BaseEnv):
     def __init__(self, db, scene_id: int, level: int=25, maximum: int=10, elevator_count: int=4):
@@ -247,7 +270,6 @@ class DBEnv(BaseEnv):
                 category=message.category
             )
             db_message = DBMessage(
-                id=message.id,
                 scene_id=message.scene_id,
                 tick=message.tick,
                 meta=meta,

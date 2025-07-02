@@ -3,7 +3,7 @@ from typing import Literal, Optional, Any
 from datetime import datetime
 
 class BaseMessage(BaseModel):
-    id: int
+    id: Optional[int] = None
     scene_id: int
     tick: int
     category: Literal["call", "want", "into", "out", "grace exit", "passenger", "up", "down", "stop"]
