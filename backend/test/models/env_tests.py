@@ -20,18 +20,21 @@ class TestAgent(BaseAgent):
         on_call = {"up": True, "down": True}
         for elevator in envMap.elevators:
             if elevator.level == floor(elevator.level):
-                if self.match_direction(elevator, "up"):
+                if self.match_direction(elevator, "up") and on_call["up"] and not elevator.is_full():
                     up = len(envMap.passengers.get(elevator.level, {}).get("up", []))> 0
-                    if up and not elevator.is_full() and on_call["up"]:
+                    if up:
                         await self.stop_action(elevator, env.tick)
                         await self.open_action(elevator, env.tick)
+                        await self.up_action(elevator, env.tick)
                         on_call["up"] = False
-                elif self.match_direction(elevator, "down"):
+                elif self.match_direction(elevator, "down") and on_call["down"] and not elevator.is_full():
                     down = len(envMap.passengers.get(elevator.level, {}).get("down", []))> 0
-                    if down and not elevator.is_full() and on_call["down"]:
+                    if down:
                         await self.stop_action(elevator, env.tick)
                         await self.open_action(elevator, env.tick)
+                        await self.down_action(elevator, env.tick)
                         on_call["down"] = False
+
     
     async def up_action(self, elevator: Elevator, tick: int):
         await self.push_message(UpAction(**{
@@ -101,23 +104,27 @@ class MemEnvTest(unittest.TestCase):
             })
         )
         await env.run_tick()
-        await env.run_tick()
-        # Check that the passenger was added to the correct level and direction
-        self.assertIn(0, env.passengers)
-        self.assertIn("up", env.passengers[0])
-        self.assertFalse(env.elevators[0].closed)
         self.assertEqual(len(env.passengers[0]["up"]), 1)
         self.assertEqual(env.passengers[0]["up"][0].level, 0)
         self.assertEqual(env.passengers[0]["up"][0].want, 1)
+        self.assertEqual(env.elevators[0].level, 0)        
+        await env.run_tick()
+        self.assertEqual(env.elevators[0].direction, "up")
+        self.assertEqual(env.elevators[0].closed, False)
+        self.assertEqual(env.elevators[0].want, {1: 1})
+        self.assertEqual(env.elevators[0].running, False)
+        self.assertIn(0, env.passengers)
+        self.assertIn("up", env.passengers[0])
+        
+        self.assertEqual(len(env.passengers[0]["up"]), 0)
+
         for elevator in env.elevators[1:]:
             self.assertEqual(elevator.level, 0)
             self.assertEqual(elevator.closed, True)
             self.assertEqual(elevator.want, {})
             self.assertEqual(elevator.running, False)
             
-        self.assertEqual(env.elevators[0].running, False)
-        self.assertEqual(env.elevators[0].closed, False)
-        
+
     async def test_call1(self):
         """
 这个测试在启动后，会立即有一个乘客呼叫电梯。
@@ -137,9 +144,9 @@ class MemEnvTest(unittest.TestCase):
                 "category": "call"
             })
         )
-        while env.tick < 3000:
+        while env.tick < 4000:
             await env.run_tick()
-        self.assertEqual(env.elevators[0].level, 0)
+        self.assertTrue(env.elevators[0].level > 0)
         self.assertEqual(env.elevators[0].direction, "up")
         self.assertEqual(env.elevators[0].closed, True)
         self.assertEqual(env.elevators[0].want, {1: 1})
@@ -148,5 +155,5 @@ class MemEnvTest(unittest.TestCase):
 
 if __name__ == "__main__":
     asyncio.run(MemEnvTest().test_call0())
-    # asyncio.run(MemEnvTest().test_call1())
+    asyncio.run(MemEnvTest().test_call1())
     

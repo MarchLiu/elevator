@@ -120,7 +120,8 @@ class BaseEnv:
         elevator = self.elevators[message.elevator_id]
         if elevator.level < self.level - 1:
             elevator.direction = "up"
-            elevator.running = True
+            if elevator.closed:
+                elevator.running = True
         else:
             elevator.running = False
         
@@ -129,7 +130,8 @@ class BaseEnv:
         
         if elevator.level > 0:
             elevator.direction = "down"
-            elevator.running = True
+            if elevator.closed:
+                elevator.running = True
         else:
             elevator.running = False
             
@@ -147,7 +149,10 @@ class BaseEnv:
         )
         
     def close_action(self, message: CloseAction):
-        self.elevators[message.elevator_id].closed = True
+        elevator = self.elevators[message.elevator_id]
+        elevator.closed = True
+        if elevator.direction is not None:
+            elevator.running = True
         
     def open_action(self, message: OpenAction):
         self.elevators[message.elevator_id].closed = False
@@ -192,6 +197,8 @@ class BaseEnv:
                     category="close",
                     elevator_id=elevator.id
                 ))
+            elif elevator.direction is not None and elevator.closed:
+                elevator.running = True
                 
         self.tick += s
         
@@ -208,11 +215,11 @@ class BaseEnv:
         if not elevator.closed:
             passengers = self.passengers.get(elevator.level, {}).get(elevator.direction, [])
             if passengers:
-                current = sum(elevator.current.values())
+                current = sum(elevator.want.values())
                 moving = min(elevator.maximum-current, len(passengers))
                 group = passengers[:moving]
                 for passenger in group:
-                    elevator.want[passenger.level] = 1
+                    elevator.want[passenger.want] = elevator.want.get(passenger.want, 0) + 1
                 self.passengers[elevator.level][elevator.direction] = passengers[moving:]
                 return moving
         return 0
