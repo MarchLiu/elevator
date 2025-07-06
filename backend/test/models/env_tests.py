@@ -89,7 +89,7 @@ class MemEnvTest(unittest.TestCase):
     async def test_call0(self):
         """
 这个测试在启动后，会立即有一个乘客呼叫电梯。
-我们期待在消息发出后，执行两轮
+我们期待在消息发出后，执行两轮tick，电梯会打开，然后乘客进入电梯，并设定目的地。
         """
         env = MemEnv(scene_id=1, agent=TestAgent(scene_id=1))
         await env.post_message(
