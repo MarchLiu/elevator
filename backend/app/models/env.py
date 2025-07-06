@@ -19,6 +19,9 @@ class Elevator:
     level: float
     direction: Optional[Literal["up", "down"]]
     want: dict[int, int] = field(default_factory=dict)
+    
+    def is_full(self):
+        return sum(self.want.values()) >= self.maximum
 
 @dataclass
 class Passenger:

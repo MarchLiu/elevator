@@ -5,9 +5,10 @@ from app.models.env import *
 from app.models.messages import *
 
 class TestAgent(BaseAgent):
-    def __init__(self):
+    def __init__(self, scene_id: int):
         self.messages = []
         self.serial = 0
+        self.scene_id = scene_id
         
     def match_direction(self, elevator: Elevator, direction: str):
         if elevator.direction is None:
@@ -16,22 +17,53 @@ class TestAgent(BaseAgent):
     
     async def post_env(self, env: BaseEnv):
         envMap = env.dump()
+        on_call = {"up": True, "down": True}
         for elevator in envMap.elevators:
             if elevator.level == floor(elevator.level):
                 if self.match_direction(elevator, "up"):
-                    if envMap.passengers.get(elevator.level, {}).get("up", []):
-                        await self.push_message(StopAction(**{
-                            "scene_id": 1,
-                            "tick": env.tick,
-                            "category": "stop",
-                            "elevator_id": elevator.id
-                        }))
-                        await self.push_message(OpenAction(**{
-                            "scene_id": 1,
-                            "tick": env.tick,
-                            "category": "open",
-                            "elevator_id": elevator.id
-                        }))
+                    up = len(envMap.passengers.get(elevator.level, {}).get("up", []))> 0
+                    if up and not elevator.is_full() and on_call["up"]:
+                        await self.stop_action(elevator, env.tick)
+                        await self.open_action(elevator, env.tick)
+                        on_call["up"] = False
+                elif self.match_direction(elevator, "down"):
+                    down = len(envMap.passengers.get(elevator.level, {}).get("down", []))> 0
+                    if down and not elevator.is_full() and on_call["down"]:
+                        await self.stop_action(elevator, env.tick)
+                        await self.open_action(elevator, env.tick)
+                        on_call["down"] = False
+    
+    async def up_action(self, elevator: Elevator, tick: int):
+        await self.push_message(UpAction(**{
+            "scene_id": self.scene_id,
+            "tick": tick,
+            "elevator_id": elevator.id,
+            "category": "up"
+        }))
+    
+    async def down_action(self, elevator: Elevator, tick: int):
+        await self.push_message(DownAction(**{
+            "scene_id": self.scene_id,
+            "tick": tick,
+            "elevator_id": elevator.id,
+            "category": "down"
+        }))
+        
+    async def stop_action(self, elevator: Elevator, tick: int):
+        await self.push_message(StopAction(**{
+            "scene_id": self.scene_id,
+            "tick": tick,
+            "elevator_id": elevator.id,
+            "category": "stop"
+        }))
+        
+    async def open_action(self, elevator: Elevator, tick: int):
+        await self.push_message(OpenAction(**{
+            "scene_id": self.scene_id,
+            "tick": tick,
+            "elevator_id": elevator.id,
+            "category": "open"
+        }))
     
     async def push_message(self, message: BaseMessage):
         heapq.heappush(self.messages, 
@@ -56,7 +88,7 @@ class MemEnvTest(unittest.TestCase):
 这个测试在启动后，会立即有一个乘客呼叫电梯。
 我们期待在消息发出后，执行两轮
         """
-        env = MemEnv(scene_id=1, agent=TestAgent())
+        env = MemEnv(scene_id=1, agent=TestAgent(scene_id=1))
         await env.post_message(
             CallAction(**{
                 "id": 1, 
@@ -73,9 +105,16 @@ class MemEnvTest(unittest.TestCase):
         # Check that the passenger was added to the correct level and direction
         self.assertIn(0, env.passengers)
         self.assertIn("up", env.passengers[0])
+        self.assertFalse(env.elevators[0].closed)
         self.assertEqual(len(env.passengers[0]["up"]), 1)
         self.assertEqual(env.passengers[0]["up"][0].level, 0)
         self.assertEqual(env.passengers[0]["up"][0].want, 1)
+        for elevator in env.elevators[1:]:
+            self.assertEqual(elevator.level, 0)
+            self.assertEqual(elevator.closed, True)
+            self.assertEqual(elevator.want, {})
+            self.assertEqual(elevator.running, False)
+            
         self.assertEqual(env.elevators[0].running, False)
         self.assertEqual(env.elevators[0].closed, False)
         
@@ -86,7 +125,7 @@ class MemEnvTest(unittest.TestCase):
 - 电梯在0层，方向向上，电梯门是关闭的
 - 电梯里有一个乘客，乘客在0层，想要去1层
         """
-        env = MemEnv(scene_id=1, agent=TestAgent())
+        env = MemEnv(scene_id=1, agent=TestAgent(scene_id=1))
         await env.post_message(
             CallAction(**{
                 "id": 1, 
