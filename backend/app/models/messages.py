@@ -22,6 +22,10 @@ class DownAction(BaseMessage):
     elevator_id: int
     category: Literal["down"]
     
+class CleanDirectionAction(BaseMessage):
+    elevator_id: int
+    category: Literal["clean direction"]
+    
 class StopAction(BaseMessage):
     elevator_id: int
     category: Literal["stop"]

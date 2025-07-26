@@ -22,6 +22,12 @@ class Elevator:
     
     def is_full(self):
         return sum(self.want.values()) >= self.maximum
+    
+    def arrive_level(self):
+        return abs(self.level - floor(self.level)) < 0.1
+    
+    def on_level(self):
+        return floor(self.level)
 
 @dataclass
 class Passenger:
@@ -81,6 +87,8 @@ class BaseEnv:
             self.up_action(message)
         elif isinstance(message, DownAction):
             self.down_action(message)
+        elif isinstance(message, CleanDirectionAction):
+            self.clean_direction_action(message)
         elif isinstance(message, StopAction):
             self.stop_action(message)
         elif isinstance(message, CloseAction):
@@ -89,6 +97,10 @@ class BaseEnv:
             self.open_action(message)
         else:
             raise ValueError(f"Unknown message type: {type(message)}")
+
+    def clean_direction_action(self, message: CleanDirectionAction):
+        elevator = self.elevators[message.elevator_id]
+        elevator.direction = None
 
     def grace_stop(self, timeout_ticks: int):
         raise NotImplementedError
@@ -186,7 +198,7 @@ class BaseEnv:
                 elevator.level += s / self.one_level
             elif not (elevator.running or elevator.closed):
                 passengers_count = 0
-                if elevator.level == floor(elevator.level):
+                if elevator.arrive_level():
                     self.check_out(elevator)
                     passengers_count += self.check_in(elevator)
                 waiting = 3000+(passengers_count-1)*2000 # 等待时间
@@ -201,26 +213,27 @@ class BaseEnv:
                 elevator.running = True
                 
         self.tick += s
+
         
     def check_out(self, elevator):
-        if elevator.level == floor(elevator.level):
+        if elevator.arrive_level():
             if not elevator.closed:
-                passengers = elevator.want.get(elevator.level, 0)
+                passengers = elevator.want.get(elevator.on_level(), 0)
                 if passengers > 0:
-                    del elevator.want[elevator.level]
+                    del elevator.want[elevator.on_level()]
                 return passengers
         return 0
         
     def check_in(self, elevator):
         if not elevator.closed:
-            passengers = self.passengers.get(elevator.level, {}).get(elevator.direction, [])
+            passengers = self.passengers.get(elevator.on_level(), {}).get(elevator.direction, [])
             if passengers:
                 current = sum(elevator.want.values())
                 moving = min(elevator.maximum-current, len(passengers))
                 group = passengers[:moving]
                 for passenger in group:
                     elevator.want[passenger.want] = elevator.want.get(passenger.want, 0) + 1
-                self.passengers[elevator.level][elevator.direction] = passengers[moving:]
+                self.passengers[elevator.on_level()][elevator.direction] = passengers[moving:]
                 return moving
         return 0
         
