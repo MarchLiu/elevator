@@ -1,0 +1,156 @@
+# Cursor Project Configuration for Elevator Simulation
+
+## Project Overview
+This is an elevator simulation system with a backend API (FastAPI + SQLAlchemy) and a frontend (Vue.js + TypeScript). The project simulates elevator operations with multiple elevators, passengers, and real-time state management.
+
+## Project Structure
+```
+elevator/
+├── backend/                 # FastAPI backend with SQLAlchemy
+│   ├── app/                # Main application code
+│   │   ├── api/           # API endpoints
+│   │   ├── models/        # Data models (env.py, messages.py, errors.py)
+│   │   ├── database.py    # Database configuration
+│   │   └── main.py        # FastAPI application entry point
+│   ├── algo/              # Algorithm implementations
+│   │   ├── python/        # Python algorithms (stateful.py, stateless.py)
+│   │   ├── java/          # Java algorithms
+│   │   └── binary/        # Binary algorithms
+│   └── test/              # Backend tests
+├── frontend/              # Vue.js frontend
+│   ├── src/               # Source code
+│   │   ├── views/         # Vue components
+│   │   ├── App.vue        # Main app component
+│   │   └── main.ts        # Entry point
+│   └── package.json       # Frontend dependencies
+├── simulators/            # Simulation implementations
+│   ├── python/           # Python simulator
+│   └── cpp/              # C++ simulator
+└── doc/                  # Documentation and diagrams
+```
+
+## Technology Stack
+
+### Backend
+- **FastAPI**: Modern Python web framework for APIs
+- **SQLAlchemy**: SQL toolkit and ORM
+- **SQLModel**: SQL databases in Python, designed for compatibility with both SQLAlchemy and Pydantic
+- **Pydantic**: Data validation using Python type annotations
+- **Alembic**: Database migration tool
+- **Uvicorn**: ASGI server for running FastAPI
+- **Python-Jose**: JWT token handling
+- **Passlib**: Password hashing
+
+### Frontend
+- **Vue.js 3**: Progressive JavaScript framework
+- **TypeScript**: Typed JavaScript
+- **Vite**: Build tool and dev server
+- **Vue Router**: Official router for Vue.js
+
+## Key Concepts
+
+### Elevator System
+- **Elevators**: Multiple elevators with different capacities and speeds
+- **Passengers**: People waiting for elevators with origin/destination floors
+- **Actions**: Commands sent to elevators (up, down, stop, open, close)
+- **Ticks**: Time units for simulation (1000 ticks = 1 second)
+
+### Environment Models
+- **MemEnv**: In-memory environment for testing
+- **BaseEnv**: Abstract base environment class
+- **BaseAgent**: Abstract base agent class for elevator control logic
+
+### Message System
+- **CallAction**: Passenger calling elevator
+- **UpAction/DownAction**: Elevator movement commands
+- **StopAction/OpenAction**: Elevator control commands
+
+## Development Guidelines
+
+### Code Style
+- Use Python type hints throughout the backend
+- Follow PEP 8 for Python code
+- Use async/await for asynchronous operations
+- Implement proper error handling with custom exception classes
+
+### Testing
+- Write unit tests for all models and algorithms
+- Use `unittest.IsolatedAsyncioTestCase` for async tests
+- Test elevator simulation scenarios thoroughly
+- Verify passenger flow and elevator behavior
+
+### Database
+- Use SQLModel for type-safe database operations
+- Implement proper migrations with Alembic
+- Use PostgreSQL as the primary database
+- Handle database connections properly in async context
+
+### API Design
+- RESTful API design principles
+- Use Pydantic models for request/response validation
+- Implement proper HTTP status codes
+- Add comprehensive API documentation
+
+### Frontend
+- Use Vue 3 Composition API
+- Implement TypeScript interfaces for all data models
+- Use Vite for fast development and building
+- Follow Vue.js best practices and conventions
+
+## Common Patterns
+
+### Environment-Agent Interaction
+```python
+# Agent sends actions to environment
+await agent.post_env(env)
+
+# Environment processes actions and updates state
+await env.run_tick()
+```
+
+### Message Handling
+```python
+# Post message to environment
+await env.post_message(CallAction(...))
+
+# Process messages in environment
+for message in agent.read():
+    # Handle message
+    pass
+```
+
+### Elevator Control
+```python
+# Check if elevator arrives at a level
+if elevator.arrive_level():
+    # Handle arrival logic
+    pass
+
+# Get current floor level
+current_level = elevator.on_level()
+```
+
+## Testing Scenarios
+- Single passenger elevator ride
+- Multiple passengers with different destinations
+- Elevator capacity limits
+- Emergency scenarios
+- Performance under load
+
+## Performance Considerations
+- Optimize database queries for real-time simulation
+- Use efficient data structures for passenger management
+- Implement proper indexing for database tables
+- Consider caching for frequently accessed data
+
+## Security
+- Implement proper authentication and authorization
+- Validate all input data
+- Use environment variables for sensitive configuration
+- Follow OWASP security guidelines
+
+## Documentation
+- Maintain up-to-date API documentation
+- Document elevator algorithms and their behavior
+- Include sequence diagrams for complex interactions
+- Provide setup and deployment instructions 

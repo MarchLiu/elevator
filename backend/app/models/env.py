@@ -8,6 +8,7 @@ import asyncio
 from dataclasses import field
 from sqlmodel import SQLModel, Field
 from sqlalchemy import Column, JSON
+import loguru
 
 @dataclass
 class Elevator:
@@ -101,8 +102,10 @@ class BaseEnv:
     def clean_direction_action(self, message: CleanDirectionAction):
         elevator = self.elevators[message.elevator_id]
         elevator.direction = None
+        loguru.logger.debug(f"tick {self.tick} clean_direction_action {elevator.id} {elevator.on_level()} {elevator.direction}")
 
     def grace_stop(self, timeout_ticks: int):
+        loguru.logger.debug(f"tick {self.tick} grace_stop {timeout_ticks}")
         raise NotImplementedError
                 
     def call_action(self, message: CallAction):
@@ -123,34 +126,42 @@ class BaseEnv:
         ))
         group[message.direction] = bucket
         self.passengers[message.level] = group
+        loguru.logger.debug(f"tick {self.tick} call_action {message.id} {message.level} {message.want} {direction} {group}")
         
     def want_action(self, message: WantAction):
         c = self.elevators[message.elevator_id].want.get(message.want, 0)
         self.elevators[message.elevator_id].want[message.want] = c + 1
+        loguru.logger.debug(f"tick {self.tick} want_action {message.elevator_id} {message.want} {c + 1}")
 
     def up_action(self, message: UpAction):
         elevator = self.elevators[message.elevator_id]
         if elevator.level < self.level - 1:
             elevator.direction = "up"
+            loguru.logger.debug(f"tick {self.tick} up_action {elevator.id} {elevator.on_level()} {elevator.direction}")
             if elevator.closed:
                 elevator.running = True
+                loguru.logger.debug(f"tick {self.tick} start running {elevator.id} {elevator.on_level()} {elevator.direction}")
         else:
             elevator.running = False
+            loguru.logger.debug(f"tick {self.tick} stop running {elevator.id} {elevator.on_level()} {elevator.direction} because level {elevator.level} >= {self.level - 1}")
         
     def down_action(self, message: DownAction):
         elevator = self.elevators[message.elevator_id]
         
         if elevator.level > 0:
             elevator.direction = "down"
+            loguru.logger.debug(f"tick {self.tick} down_action {elevator.id} {elevator.on_level()} {elevator.direction}")
             if elevator.closed:
                 elevator.running = True
+                loguru.logger.debug(f"tick {self.tick} start running {elevator.id} {elevator.on_level()} {elevator.direction}")
         else:
             elevator.running = False
-            
+            loguru.logger.debug(f"tick {self.tick} stop running {elevator.id} {elevator.on_level()} {elevator.direction} because level {elevator.level} <= 0")
             
     def stop_action(self, message: StopAction):
         elevator = self.elevators[message.elevator_id]
         elevator.running = False
+        loguru.logger.debug(f"tick {self.tick} stop_action {elevator.id} {elevator.on_level()} {elevator.direction}")
         
     def dump(self):
         return EnvMap(
@@ -163,11 +174,14 @@ class BaseEnv:
     def close_action(self, message: CloseAction):
         elevator = self.elevators[message.elevator_id]
         elevator.closed = True
+        loguru.logger.debug(f"tick {self.tick} close_action {elevator.id} {elevator.on_level()} {elevator.direction}")
         if elevator.direction is not None:
             elevator.running = True
         
     def open_action(self, message: OpenAction):
-        self.elevators[message.elevator_id].closed = False
+        elevator = self.elevators[message.elevator_id]
+        elevator.closed = False
+        loguru.logger.debug(f"tick {self.tick} open_action {elevator.id} {elevator.on_level()} {elevator.direction}")
 
     @classmethod
     def from_json(cls, data: dict[str, Any]):
@@ -199,16 +213,17 @@ class BaseEnv:
             elif not (elevator.running or elevator.closed):
                 passengers_count = 0
                 if elevator.arrive_level():
-                    self.check_out(elevator)
+                    passengers_count += self.check_out(elevator)
                     passengers_count += self.check_in(elevator)
-                waiting = 3000+(passengers_count-1)*2000 # 等待时间
-                await self.post_message(CloseAction(
-                    id=elevator.id,
-                    scene_id=elevator.scene_id,
-                    tick=self.tick+waiting,
-                    category="close",
-                    elevator_id=elevator.id
-                ))
+                    if passengers_count > 0:
+                        waiting = 3000+(passengers_count-1)*2000 # 等待时间
+                        await self.post_message(CloseAction(
+                            id=elevator.id,
+                            scene_id=elevator.scene_id,
+                            tick=self.tick+waiting,
+                            category="close",
+                            elevator_id=elevator.id
+                        ))
             elif elevator.direction is not None and elevator.closed:
                 elevator.running = True
                 
@@ -220,6 +235,7 @@ class BaseEnv:
             if not elevator.closed:
                 passengers = elevator.want.get(elevator.on_level(), 0)
                 if passengers > 0:
+                    loguru.logger.debug(f"tick {self.tick} check_out {elevator.id} {elevator.on_level()} {passengers}")
                     del elevator.want[elevator.on_level()]
                 return passengers
         return 0
@@ -233,6 +249,7 @@ class BaseEnv:
                 group = passengers[:moving]
                 for passenger in group:
                     elevator.want[passenger.want] = elevator.want.get(passenger.want, 0) + 1
+                    loguru.logger.debug(f"tick {self.tick} check_in {elevator.id} {elevator.on_level()} {passenger.want}")
                 self.passengers[elevator.on_level()][elevator.direction] = passengers[moving:]
                 return moving
         return 0
